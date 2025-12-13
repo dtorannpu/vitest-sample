@@ -1,13 +1,16 @@
+import { sample } from "@/myFunc";
 import { useNavigate } from "react-router";
 
 const Top = () => {
   const navigate = useNavigate();
 
-  const handlePage1Click = () => {
+  const handlePage1Click = async () => {
+    const result = await sample();
     navigate("/page1");
   };
 
-  const handlePage2Click = () => {
+  const handlePage2Click = async () => {
+    const result = await sample();
     navigate("/page2");
   };
 

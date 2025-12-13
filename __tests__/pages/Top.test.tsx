@@ -1,7 +1,10 @@
 import "@testing-library/jest-dom/vitest";
 import { describe, expect, it, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Top from "@/pages/Top.tsx";
+import { sample } from "@/myFunc";
+
+vi.mock("@/myFunc");
 
 const mockedNavigate = vi.fn();
 
@@ -25,16 +28,25 @@ describe("Top", () => {
   });
 
   it("Page1押下時", async () => {
+    vi.mocked(sample).mockReturnValue(Promise.resolve("test1"));
+
     render(<Top />);
     fireEvent.click(screen.getByText("Page1"));
 
-    expect(mockedNavigate).toHaveBeenCalledWith("/page1");
+    waitFor(() => {
+      expect(sample).toHaveBeenCalled();
+      expect(mockedNavigate).toHaveBeenCalledWith("/page1");
+    });
   });
 
   it("Page2押下時", async () => {
+    vi.mocked(sample).mockReturnValue(Promise.resolve("test2"));
     render(<Top />);
     fireEvent.click(screen.getByText("Page2"));
 
-    expect(mockedNavigate).toHaveBeenCalledWith("/page2");
+    waitFor(() => {
+      expect(sample).toHaveBeenCalled();
+      expect(mockedNavigate).toHaveBeenCalledWith("/page2");
+    });
   });
 });
