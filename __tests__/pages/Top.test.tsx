@@ -1,8 +1,5 @@
 import "@testing-library/jest-dom/vitest";
 import { describe, expect, it, vi } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Top from "@/pages/Top.tsx";
-import { sample } from "@/myFunc";
 
 vi.mock("@/myFunc");
 
@@ -16,36 +13,48 @@ vi.mock("react-router", async (importActual) => {
   };
 });
 
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Top from "@/pages/Top.tsx";
+import { sample } from "@/myFunc";
+
 describe("Top", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
-  it("初期表示", async () => {
+  it("初期表示", () => {
     render(<Top />);
 
-    expect(screen.getByText("Top")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Top" })).toBeInTheDocument();
   });
 
   it("Page1押下時", async () => {
-    vi.mocked(sample).mockReturnValue(Promise.resolve("test1"));
+    vi.mocked(sample).mockResolvedValueOnce("test1");
+    const user = userEvent.setup();
 
     render(<Top />);
-    fireEvent.click(screen.getByText("Page1"));
+    await user.click(screen.getByRole("button", { name: "Page1" }));
 
-    waitFor(() => {
-      expect(sample).toHaveBeenCalled();
+    await waitFor(() => {
+      expect(sample).toHaveBeenCalledTimes(1);
+    });
+    await waitFor(() => {
       expect(mockedNavigate).toHaveBeenCalledWith("/page1");
     });
   });
 
   it("Page2押下時", async () => {
-    vi.mocked(sample).mockReturnValue(Promise.resolve("test2"));
-    render(<Top />);
-    fireEvent.click(screen.getByText("Page2"));
+    vi.mocked(sample).mockResolvedValueOnce("test2");
+    const user = userEvent.setup();
 
-    waitFor(() => {
-      expect(sample).toHaveBeenCalled();
+    render(<Top />);
+    await user.click(screen.getByRole("button", { name: "Page2" }));
+
+    await waitFor(() => {
+      expect(sample).toHaveBeenCalledTimes(1);
+    });
+    await waitFor(() => {
       expect(mockedNavigate).toHaveBeenCalledWith("/page2");
     });
   });
