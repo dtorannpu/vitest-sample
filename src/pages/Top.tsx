@@ -6,11 +6,13 @@ const Top = () => {
 
   const handlePage1Click = async () => {
     const result = await sample();
+    console.log(result);
     navigate("/page1");
   };
 
   const handlePage2Click = async () => {
     const result = await sample();
+    console.log(result);
     navigate("/page2");
   };
 
