@@ -24,24 +24,12 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Cache Playwright browsers
-        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3.5.0
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-playwright-
       - name: Build the application
         run: pnpm build
       - name: Start the application
         run: pnpm preview &
-      - name: Install Playwright Browsers # cacheがない時は依存ブラウザと依存ライブラリを両方インストール
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
+      - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
-      - name: Install Playwright system dependencies # cacheがある時は依存ライブラリのみインストール
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: pnpm exec playwright install-deps
       - name: Run Playwright tests
         run: pnpm exec playwright test
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
