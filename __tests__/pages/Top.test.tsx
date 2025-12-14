@@ -29,7 +29,7 @@ describe("Top", () => {
     vi.clearAllMocks();
   });
 
-  it("初期表示", async () => {
+  it("初期表示", () => {
     render(<Top />);
 
     expect(screen.getByRole("heading", { name: "Top" })).toBeInTheDocument();
