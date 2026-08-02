@@ -13,7 +13,23 @@ export default defineConfig({
 
   test: {
     globals: true,
-    environment: "jsdom",
-    include: ["__tests__/**/*.test.{ts,tsx}"],
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          include: ["__tests__/**/*.test.ts"],
+          environment: "node",
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "components",
+          include: ["__tests__/**/*.test.tsx"],
+          environment: "jsdom",
+        },
+      },
+    ],
   },
 });
