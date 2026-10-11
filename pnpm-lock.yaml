@@ -187,7 +187,7 @@ importers:
         version: 10.4.2
       '@testing-library/jest-dom':
         specifier: ^7.0.1
-        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.2(@types/node@26.6.3)))
+        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.4(@types/node@26.6.3)))
       '@testing-library/react':
         specifier: ^16.3.3
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -205,7 +205,7 @@ importers:
         version: 19.3.0(@types/react@19.3.0)
       '@vitejs/plugin-react':
         specifier: ^6.1.1
-        version: 6.1.1(vite@8.3.2(@types/node@26.6.3))
+        version: 6.1.1(vite@8.3.4(@types/node@26.6.3))
       eslint:
         specifier: ^10.11.0
         version: 10.11.0
@@ -231,11 +231,11 @@ importers:
         specifier: ^8.70.0
         version: 8.70.0(eslint@10.11.0)(typescript@6.0.3)
       vite:
-        specifier: ^8.3.2
-        version: 8.3.2(@types/node@26.6.3)
+        specifier: ^8.3.4
+        version: 8.3.4(@types/node@26.6.3)
       vitest:
         specifier: ^5.0.3
-        version: 5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.2(@types/node@26.6.3))
+        version: 5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.4(@types/node@26.6.3))
 
 packages:
 
@@ -1221,8 +1221,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  postcss@8.5.28:
-    resolution: {integrity: sha512-RRuzqDtt5Y9h3quz5hWhK+TPnsmVs6WwSU6LkJMeY4HstUEDuYTG8UJSdawMRzmzAtV+KEoG8N3Qg2qLy5vM/A==}
+  postcss@8.5.29:
+    resolution: {integrity: sha512-49cGhUbXj8Qenv0iTMxA1cFBzxXoctpC9Ujd77t1WcbJIr6nF/eI7g/8MgxrYldFRuAXvja7xQRwavoW7kgrxQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -1309,6 +1309,10 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
+  source-map-js@1.2.2:
+    resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
+    engines: {node: '>=0.10.0'}
+
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
 
@@ -1381,8 +1385,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  vite@8.3.2:
-    resolution: {integrity: sha512-SQr1x6W5vVSbROg7vsyXIaxK9b0G7zsT68acdWWRmnBUsgDieLCRG+Rep9WdZgcposvv/GSnr4GUUBqB3vXq6w==}
+  vite@8.3.4:
+    resolution: {integrity: sha512-IftLE8phJhdNRIGNEV4JCCvfNScoZQVfcXaN8TQropWGJtOHcu+iAB9pHcuGvmEb/kddw0LBe/jS8ztdC6xdiQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -1826,7 +1830,7 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.2(@types/node@26.6.3)))':
+  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.4(@types/node@26.6.3)))':
     dependencies:
       '@adobe/css-tools': 4.5.0
       '@testing-library/dom': 10.4.2
@@ -1836,7 +1840,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
     optionalDependencies:
-      vitest: 5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.2(@types/node@26.6.3))
+      vitest: 5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.4(@types/node@26.6.3))
 
   '@testing-library/react@16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -1970,19 +1974,19 @@ snapshots:
       '@typescript-eslint/types': 8.70.0
       eslint-visitor-keys: 5.0.1
 
-  '@vitejs/plugin-react@6.1.1(vite@8.3.2(@types/node@26.6.3))':
+  '@vitejs/plugin-react@6.1.1(vite@8.3.4(@types/node@26.6.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.3.2(@types/node@26.6.3)
+      vite: 8.3.4(@types/node@26.6.3)
 
-  '@vitest/mocker@5.0.3(vite@8.3.2(@types/node@26.6.3))':
+  '@vitest/mocker@5.0.3(vite@8.3.4(@types/node@26.6.3))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@vitest/spy': 5.0.3
       estree-walker: 3.0.3
       magic-string: 1.3.1
     optionalDependencies:
-      vite: 8.3.2(@types/node@26.6.3)
+      vite: 8.3.4(@types/node@26.6.3)
 
   '@vitest/spy@5.0.3': {}
 
@@ -2418,11 +2422,11 @@ snapshots:
     dependencies:
       playwright-core: 1.63.0
 
-  postcss@8.5.28:
+  postcss@8.5.29:
     dependencies:
       nanoid: 3.3.19
       picocolors: 1.1.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   prelude-ls@1.2.1: {}
 
@@ -2503,6 +2507,8 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
+  source-map-js@1.2.2: {}
+
   std-env@4.2.0: {}
 
   strip-indent@3.0.0:
@@ -2567,21 +2573,21 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite@8.3.2(@types/node@26.6.3):
+  vite@8.3.4(@types/node@26.6.3):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
-      postcss: 8.5.28
+      postcss: 8.5.29
       rolldown: 1.2.12
       tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 26.6.3
       fsevents: 2.3.3
 
-  vitest@5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.2(@types/node@26.6.3)):
+  vitest@5.0.3(@types/node@26.6.3)(jsdom@30.1.2)(vite@8.3.4(@types/node@26.6.3)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.3(vite@8.3.2(@types/node@26.6.3))
+      '@vitest/mocker': 5.0.3(vite@8.3.4(@types/node@26.6.3))
       chai: 6.2.2
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -2592,7 +2598,7 @@ snapshots:
       tinybench: 6.1.4
       tinyexec: 1.3.0
       tinyglobby: 0.2.17
-      vite: 8.3.2(@types/node@26.6.3)
+      vite: 8.3.4(@types/node@26.6.3)
       why-is-node-running: 3.2.1
     optionalDependencies:
       '@types/node': 26.6.3
