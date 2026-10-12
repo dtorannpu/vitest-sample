@@ -3,5 +3,3 @@ onlyBuiltDependencies:
 minimumReleaseAge: 10080
 allowBuilds:
   esbuild: true
-minimumReleaseAgeExclude:
-  - jsdom@30.0.1
